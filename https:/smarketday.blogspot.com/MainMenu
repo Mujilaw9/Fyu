@@ -247,8 +247,15 @@ Events will appear every week</p>
     <div class="card">..</div>
   </div>
 </div>
-
-
+Download Tools
+<a href="/images/myw3schoolsimage.jpg" download>
+  <img src="/images/myw3schoolsimage.jpg" alt="W3Schools" width="104" height="142">
+</a>
+Upload Tools
+<form action="/action_page.php">
+  <input type="file" id="myFile" name="filename">
+  <input type="submit">
+</form>
 
 
 
