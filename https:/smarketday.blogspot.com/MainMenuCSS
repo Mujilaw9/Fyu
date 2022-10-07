@@ -1,0 +1,58 @@
+//RPG game//
+//brown-gold//
+Background-Color: #FB9A40 #FBD341
+//DarkBlue//
+Background-Color: #161853 #0F044C
+//Gold//
+Background-Color: #21209C #FDB827 #FFE61B
+//*Follow up the rules of banner.*//
+-------------Portfolio---------
+//-------------Product---------------//
+Background-Color: #FB9A40 #FBD341 //Brown Gold
+Background-Color: #161853 #0F044C //DarkBlue
+Background-Color: #21209C #FDB827 #FFE61B //Gold
+Color: #FB9A40 #FBD341
+Color: #FB9A40 #FBD341
+text-align:
+font-size:
+padding:
+margin:
+border-box:
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+border-radius:
+linear-gradient:
+backgroundcolor-lineargradient:
+text-transform: uppercase;
+transition: box-shadow 0.5s;
+.slideanim {visibility:hidden;}
+.slide {
+animation-name: slide;
+-webkit-animation-name: slide;
+animation-duration: 1s;
+-webkit-animation-duration: 1s;
+visibility: visible;
+}
+@keyframes slide {
+0%{
+opacity: 0;
+transform: translateY(70%);
+} 
+100% {
+opacity: 1;
+transform: translateY(0%);
+}
+}
+@-webkit-keyframes slide {
+0% {
+opacity: 0;
+-webkit-transform: translateY(70%);
+} 
+100% {
+opacity: 1;
+-webkit-transform: translateY(0%);
+}
+}
