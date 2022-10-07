@@ -1,0 +1,20 @@
+body {
+Background-img: img.jpg }
+{ Background-img: img.jpg }
+{Background-img: img.jpg }
+Background-Color: #000000 #FFFFFF
+Color: #064ACB
+font-size: 480px;
+text-transform: uppercase;
+font-family: Montserrat, sans-serif,Gemunu Libre,
+silkscreen, Alfaslab One, Press start 2P;
+text-align: Center
+button: 
+button-hover:
+button-active:
+background-color: #064ACB
+border-radius: 8px 8px 8px 8px
+padding: 25px 25px 25px 25px
+margin: 16px 16px 16px 16px
+
+
