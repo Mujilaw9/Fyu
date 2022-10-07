@@ -1,0 +1,336 @@
+<h2>FYU BUILDER</h2><br>
+      <button onclick="myfunction()"style="border-radius:16px;margintop:15px;marginbottom:15px;marginleft:15px;marginright:15px">BUILD</button><br>
+<div>
+<h3>WELCOME OCTOBER</h3>
+<h2>After release at September 29 2022. Fyu, commited to be focus on Make a feature of event, portfolio, and product.</h2>
+<h1><a href="#navbar"style="color:#000000">In The Event Feature</a></h1><h1>Fyu always want to innovation about new something. Every week updates, event will be showing up or replacement an event before.</h1>
+<p>Portfolio Feature, create for the developer save their Curriculum Vitae.
+</p>
+<p>And the product, we using 3 concept.
+First, Game of Fyu
+Game of Fyu which means the website using theme of like a game. but, not only a theme we commite for make happier user while using our product. Feel responsive, comfortable, and useful.</p>
+<h3><a href="#theme"style="color:#000000"> Theme of Fyu</a></h3>
+<p>Fyu providing a creative user for joining and contribute to provide a seasonal theme. Any other, user can be download theme for Free.</p>
+<h3><a href="#design"style="color:#000000"> Design to Design</a></h3>
+<p>Fyu as a placement of creative user to make design or download a design like a Logo Design, Poster, Banner, or something else. You can Upload, Download and Convert your design file.
+</p>
+<h1>Interface Fyu</h1>
+<p>Interface might be change while update version.</p>
+<h1>Portfolio Feature.</h1>
+<p>The Portfolio Feature must have a permission of developer. Please read and agree to the term and privacy policy of FyuTeamProduction.</p>
+<h1>Product Feature.</h1>
+<p>3 Things of Fyu product.
+Game of Fyu
+Theme of Fyu
+Design to Design</p>
+<h3>Fyu product consist for Free to Download.</h3>
+</div>
+      <br><button class="btn btn-default btn-lg"style="margintop:15px;marginbottom:15px;marginleft:15px;marginright:15px">BACK</button>
+<script>
+function myFunction() {
+  document.getElementById("fyubuild").style.transition = "all 2s";
+}
+</script>      
+</div>
+<div class="container-fluid bg-grey">
+  <div id="event">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+ <div class="event">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+</div>
+<div id="navbar">
+ <h2 id="#event2">EVENT</h2>
+</div>
+<h4><strong>DOCS</strong><p>Adding assets and images</p>
+<p>Contents</p>
+<p>Specifying assets</p>
+<p>Asset bundling</p>
+<p>Asset variants</p>
+<p>Loading assets</p>
+<p>Loading text assets</p>
+<p>Loading images</p>
+<p>Declaring resolution-aware image assets</p>
+<p>Loading images</p>
+<p>Asset images in package dependencies
+Bundling of package assets</p>
+<p>Sharing assets with the underlying platform</p>
+<p>Loading Fyu assets in Android</p>
+<p>Loading Fyu assets in iOS</p>
+<p>Loading iOS images in Fyu</p>
+<p>Platform assets</p>
+<p>Updating the app icon</p>
+<p>Android</p>
+<p>iOS</p>
+<p>Updating the launch screen</p>
+<p>Android</p>
+<p>iOS</p>
+<p>Fyu apps can include both code and assets (sometimes called resources). An asset is a file that is bundled and deployed with your app, and is accessible at runtime. Common types of assets include static data (for example, JSON files), configuration files, icons, and images (JPEG, WebP, GIF, animated WebP/GIF, PNG, BMP, and WBMP).</p>
+<p>Specifying assets</p>
+<p>Fyu uses the pubspec.yaml file, located at the root of your project, to identify assets required by an app.</p>
+<p>Here is an example:</p>
+<p>show coding</p>
+<p>To include all assets under a directory, specify the directory name with the / character at the end:</p>
+<p>show coding</p>
+<p>Note: Only files located directly in the directory are included unless there are files with the same name inside a subdirectory (see Asset Variants). To add files located in subdirectories, create an entry per directory.</p>
+<p>Asset bundling</p>
+<p>The assets subsection of the Fyu section specifies files that should be included with the app. Each asset is identified by an explicit path (relative to the pubspec.yaml file) where the asset file is located. The order in which the assets are declared doesn’t matter. The actual directory name used (assets in first example or directory in the above example) doesn’t matter.</p>
+<p>
+During a build, Fyu places assets into a special archive called the asset bundle that apps read from at runtime.
+</p>
+<p>Asset variants</p>
+<p>The build process supports the notion of asset variants: different versions of an asset that might be displayed in different contexts. When an asset’s path is specified in the assets section of pubspec.yaml, the build process looks for any files with the same name in adjacent subdirectories. Such files are then included in the asset bundle along with the specified asset.</p>
+<p>
+For example, if you have the following files in your application directory:</p>
+<p>show coding</p>
+<p>And your pubspec.yaml file contains the following:</p>
+<p>show coding</p>
+<p>Then both graphics/background.png and graphics/dark/background.png are included in your asset bundle. The former is considered the main asset, while the latter is considered a variant.</p>
+<p>
+If, on the other hand, the graphics directory is specified:</p>
+<p>show coding</p>
+<p>Then the graphics/my_icon.png, graphics/background.png and graphics/dark/background.png files are also included.</p>
+<p>
+Fyu uses asset variants when choosing resolution-appropriate images. In the future, this mechanism might be extended to include variants for different locales or regions, reading directions, and so on.</p>
+<p>Loading assets</p>
+<p>Your app can access its assets through an AssetBundle object.</p>
+<p>
+The two main methods on an asset bundle allow you to load a string/text asset (loadString()) or an image/binary asset (load()) out of the bundle, given a logical key. The logical key maps to the path to the asset specified in the pubspec.yaml file at build time.
+</p><p>
+Loading text assets</p><p>
+Each Fyu app has a rootBundle object for easy access to the main asset bundle. It is possible to load assets directly using the rootBundle global static from package:fyu/services
+</p><p>
+However, it’s recommended to obtain the AssetBundle for the current BuildContext using DefaultAssetBundle, rather than the default asset bundle that was built with the app; this approach enables a parent widget to substitute a different AssetBundle at run time, which can be useful for localization or testing scenarios.
+</p>
+<p>
+Typically, you’ll use DefaultAssetBundle.of() to indirectly load an asset, for example a JSON file, from the app’s runtime rootBundle.
+</p><p>
+Outside of a Widget context, or when a handle to an AssetBundle is not available, you can use rootBundle to directly load such assets. For example:
+</p><p>show coding</p><p>
+Loading images</p><p>
+Fyu can load resolution-appropriate images for the current device pixel ratio.</p><p>
+Declaring resolution-aware image assets
+AssetImage understands how to map a logical requested asset onto one that most closely matches the current device pixel ratio. In order for this mapping to work, assets should be arranged according to a particular directory structure:</p><p>
+show coding</p><p>
+Where M and N are numeric identifiers that correspond to the nominal resolution of the images contained within. In other words, they specify the device pixel ratio that the images are intended for.</p><p>
+The main asset is assumed to correspond to a resolution of 1.0. For example, consider the following asset layout for an image named my_icon.png:</p><p>
+show coding</p><p>
+On devices with a device pixel ratio of 1.8, the asset .../2.0x/my_icon.png is chosen. For a device pixel ratio of 2.7, the asset .../3.0x/my_icon.png is chosen.</p><p>
+If the width and height of the rendered image are not specified on the Image widget, the nominal resolution is used to scale the asset so that it occupies the same amount of screen space as the main asset would have, just with a higher resolution. That is, if .../my_icon.png is 72px by 72px, then .../3.0x/my_icon.png should be 216px by 216px; but they both render into 72px by 72px (in logical pixels), if width and height are not specified.
+</p><p>
+Each entry in the asset section of the pubspec.yaml should correspond to a real file, with the exception of the main asset entry. If the main asset entry doesn’t correspond to a real file, then the asset with the lowest resolution is used as the fallback for devices with device pixel ratios below that resolution. The entry should still be included in the pubspec.yaml manifest, however.
+</p><p>
+Loading images</p>
+<p>
+To load an image, use the AssetImage class in a widget’s build() method.
+</p><p>
+For example, your app can load the background image from the asset declarations above:</p><p>
+show coding</p><p>
+Anything using the default asset bundle inherits resolution awareness when loading images. (If you work with some of the lower level classes, like ImageStream or ImageCache, you’ll also notice parameters related to scale.)
+Note: Device pixel ratio depends on MediaQueryData.size which requires to have either a MaterialApp or CupertinoApp as an ancestor of your AssetImage.
+Asset images in package dependencies
+To load an image from a package dependency, the package argument must be provided to AssetImage.</p>
+<p>
+For example, your app can load the background image from the asset declarations above:</p><p>
+show coding</p><p>
+Anything using the default asset bundle inherits resolution awareness when loading images. (If you work with some of the lower level classes, like ImageStream or ImageCache, you’ll also notice parameters related to scale.)
+Note: Device pixel ratio depends on MediaQueryData.size which requires to have either a MaterialApp or CupertinoApp as an ancestor of your AssetImage.
+Asset images in package dependencies
+To load an image from a package dependency, the package argument must be provided to AssetImage.</p>
+<p>
+For instance, suppose your application depends on a package called my_icons, which has the following directory structure:
+show coding
+To load the image, use:
+show coding
+Assets used by the package itself should also be fetched using the package argument as above.</p><p>
+Bundling of package assets
+If the desired asset is specified in the pubspec.yaml file of the package, it’s bundled automatically with the application. In particular, assets used by the package itself must be specified in its pubspec.yaml.</p><p>
+A package can also choose to have assets in its lib/ folder that are not specified in its pubspec.yaml file. In this case, for those images to be bundled, the application has to specify which ones to include in its pubspec.yaml. For instance, a package named fancy_backgrounds could have the following files:</p><p>
+show coding</p>
+<p>
+To include, say, the first image, the pubspec.yaml of the application should specify it in the assets section:</p><p>
+show coding</p><p>
+The lib/ is implied, so it should not be included in the asset path.
+If you are developing a package, to load an asset within the package, specify it in the ‘pubspec.yaml’ of the package:</p><p>
+show coding</p><p>
+To load the image within your package, use:</p><p>
+show coding</p>
+<p>
+Sharing assets with the underlying platform
+Fyu assets are readily available to platform code using the AssetManager on Android and NSBundle on iOS.
+</p><p>
+Loading Fyu assets in Android
+On Android the assets are available through the AssetManager API. The lookup key used in, for instance openFd, is obtained from lookupKeyForAsset on PluginRegistry.Registrar or getLookupKeyForAsset on FyuView. PluginRegistry.Registrar is available when developing a plugin while FyuView would be the choice when developing an app including a platform view.
+</p><p>
+As an example, suppose you have specified the following in your pubspec.yaml</p>
+<p>
+show coding</p><p>
+This reflects the following structure in your Fyu app.</p><p>
+show coding</p><p>
+To access icons/heart.png from your Java plugin code, do the following:</p><p>
+show coding</p><p>
+Loading Fyu assets in iOS
+On iOS the assets are available through the mainBundle. The lookup key used in, for instance pathForResource:ofType:, is obtained from lookupKeyForAsset or lookupKeyForAsset:fromPackage: on FyuPluginRegistrar, or lookupKeyForAsset: or lookupKeyForAsset:fromPackage: on FyuViewController. FyuPluginRegistrar is available when developing a plugin while FyuViewController would be the choice when developing an app including a platform view.</p>
+<p>
+As an example, suppose you have the Fyu setting from above.</p><p>
+To access icons/heart.png from your Objective-C plugin code you would do the following:</p><p>
+show coding</p><p>
+For a more complete example, see the implementation of the Fyu video_player plugin on pub.dev.</p><p>
+The ios_platform_images plugin on pub.dev wraps up this logic in a convenient category. You fetch an image as follows:</p><p>
+show coding</p><p>
+Loading iOS images in Fyu</p><p>
+When implementing Fyu by adding it to an existing iOS app, you might have images hosted in iOS that you want to use in Fyu. To accomplish that, use the ios_platform_images plugin available on pub.dev.</p><p>
+Platform assets</p><p>
+There are other occasions to work with assets in the platform projects directly. Below are two common cases where assets are used before the Flutter framework is loaded and running.</p>
+<p>Updating the app icon</p><p>
+Updating a Fyu application’s launch icon works the same way as updating launch icons in native Android or iOS applications.</p><p>
+Android</p><p>
+In your project’s root directory, navigate to .../android/app/src/main/res. The various bitmap resource folders such as mipmap-hdpi already contain placeholder images named ic_launcher.png. Replace them with your desired assets respecting the recommended icon size per screen density as indicated by the Android Developer Guide.
+Note: If you rename the .png files, you must also update the corresponding name in your AndroidManifest.xml’s <application> tag’s android:icon attribute.</p>
+<p>
+iOS</p><p>
+In your Fyu project’s root directory, navigate to .../ios/Runner. The Assets.xcassets/AppIcon.appiconset directory already contains placeholder images. Replace them with the appropriately sized images as indicated by their filename as dictated by the Apple Human Interface Guidelines. Keep the original file names.
+Updating the launch screen
+Fyu also uses native platform mechanisms to draw transitional launch screens to your Fyu app while the Fyu framework loads. This launch screen persists until Fyu renders the first frame of your application.
+Note: This implies that if you don’t call runApp() in the main() function of your app (or more specifically, if you don’t call window.render() in response to window.onDrawFrame), the launch screen persists forever.</p><p>
+Android</p><p>
+To add a launch screen (also known as “splash screen”) to your Flutter application, navigate to .../android/app/src/main. In res/drawable/launch_background.xml, use this layer list drawable XML to customize the look of your launch screen. The existing template provides an example of adding an image to the middle of a white splash screen in commented code. You can uncomment it or use other drawables to achieve the intended effect.</p><p>
+For more details, see Adding a splash screen to your mobile app.
+</p><p>
+iOS</p><p>
+To add an image to the center of your “splash screen”, navigate to .../ios/Runner. In Assets.xcassets/LaunchImage.imageset, drop in images named LaunchImage.png, LaunchImage@2x.png, LaunchImage@3x.png. If you use different filenames, update the Contents.json file in the same directory.</p><p>
+You can also fully customize your launch screen storyboard in Xcode by opening .../ios/Runner.xcworkspace. Navigate to Runner/Runner in the Project Navigator and drop in images by opening Assets.xcassets or do any customization using the Interface Builder in LaunchScreen.storyboard.</p><p>
+show coding</p><p>
+For more details, see Adding animation to your mobile app.</p>
+</h4><br>
+      <p><strong>VISION:</strong>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<h1>Card Flip with Text</h1>
+<h3>Hover over the image below:</h3>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> 
+      <p>Architect & Engineer</p> 
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+ Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<!-- Container (Services Section) -->
+<div id="product" class="container-fluid text-center">
+  <h2>PRODUCT</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="image.jpg"></span>
+      <h4>Game Of Fyu</h4>
+      <p>Game of Fyu which means the website using theme of like a game. but, not only a theme we commite for make happier user while using our product. <p>Feel responsive, comfortable, and useful.</p>
+</div>
+<div class="col-sm-4">
+      <span class="image.jpg"></span>
+      <h4>Theme Of Fyu</h4>
+      <p>Fyu providing a creative user for joining and contribute to provide a seasonal theme. Any other, user can be download theme for Free.
+</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="image.jpg"</span>
+      <h4>Design by Design</h4>
+      <p>Fyu as a placement of creative user to make design or download a design like a Logo Design, Poster, Banner, or something else. You can Upload, Download and Convert your design file.
+</p>
+    </div>
+</div>
+<!-- Container (Portfolio Section) -->
+<div id="product2" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we have created</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Yes, we built Paris</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="newyork.jpg" alt="New York" width="400" height="300">
+        <p><strong>New York</strong></p>
+        <p>We built New York</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>San Francisco</strong></p>
+        <p>Yes, San Fran is ours</p>
+      </div>
+ </div>
+  </div><br>
+  
+  <h2>Product</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+<!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4><span>GameOfFyu</span></h4>
+      </div>
+      <div class="item">
+        <h4>"ThemeOfFyu"<br><span>GameOfFyu</span></h4>
+      </div>
+      <div class="item">
+        <h4>"DesignbyDesign"<br><span></span></h4>
+      </div>
+    </div>
+<!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!-- Container (Pricing Section) -->
+<div id="product2" class="container-fluid">
+  <div class="text-center">
+    <h2>Pricing</h2>
+    <h4>Choose a payment plan that works for you</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Basic</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>20</strong> Lorem</p>
+          <p><strong>15</strong> Ipsum</p>
+          <p><strong>5</strong> Dolor</p>
+          <p><strong>2</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
